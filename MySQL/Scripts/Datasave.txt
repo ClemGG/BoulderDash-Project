@@ -1,0 +1,7 @@
+Datasave of maps with their IDs:
+
+mysqldump.exe -u root -p --single-transaction --databases boulderdashbdd --tables maplist > C:\Users\SPECIFIED_PATH\datasave.sql
+
+Data restoration into a new database (empty or not):
+
+mysql -u root -p boulderdashbdd < C:\Users\SPECIFIED_PATH\sauvegarde.sql
