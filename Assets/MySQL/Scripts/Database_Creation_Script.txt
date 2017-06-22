@@ -1,0 +1,19 @@
+
+
+-- This script will create the database containing 5 tables, one per map to add
+
+DROP DATABASE IF EXISTS BoulderDashBDD;
+CREATE DATABASE BoulderDashBDD CHARACTER SET utf8;
+USE BoulderDashBDD;
+
+DROP TABLE IF EXISTS `MapList`;
+
+
+
+
+
+CREATE TABLE MapList
+(
+ID_Map INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+Map_To_Convert VARCHAR(10000) 
+);

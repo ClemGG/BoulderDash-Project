@@ -1,0 +1,17 @@
+Account name : BoulderDashAccount
+Pswd : bdproject
+
+-------------
+
+-- User account creation
+
+GRANT CREATE VIEW,
+SELECT,
+INSERT,
+UPDATE,
+ALTER,
+SHOW VIEW,
+CREATE VIEW,
+EXECUTE,
+ON boulderdashbdd.* 
+TO 'BoulderDashAccount'@'localhost' IDENTIFIED BY 'bdproject';

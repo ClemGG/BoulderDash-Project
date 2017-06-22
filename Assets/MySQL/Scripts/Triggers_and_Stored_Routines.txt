@@ -1,0 +1,73 @@
+
+
+-- The triggers, queries et stored routines, with their Call() function
+
+
+-- Insert the new map into table (rewrites the previous map)
+
+
+
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS SetMap$$
+CREATE PROCEDURE SetMap(IN StringToInsert VARCHAR(10000), IN ID_To_Set_Map INT)
+    BEGIN 
+
+INSERT INTO MapList(ID_Map, Map_To_Convert) VALUES (ID_To_Set_Map, StringToInsert) ON DUPLICATE KEY UPDATE `ID_Map` = ID_To_Set_Map, `Map_To_Convert` = StringToInsert;
+
+    END$$
+
+DELIMITER ;
+
+
+---------------------------------------
+
+-- The CALL() function will be used by the C# script directly from the game
+
+CALL SetMap(/*the map itself*/,/*the ID of the map (a number) */);
+
+-- The syntax below is a little bit different, because this one is used directly in the game by the c# script
+
+string cmdSet = string.Concat(   "CALL SetMap('", mapToInsert, "', ", numberOfMapToLoad, ");"   );
+
+---------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Get the map to load from list of tables and inserts it into a new string
+
+
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS GetMap$$
+CREATE PROCEDURE GetMap(IN ID_To_Get_Map INT)
+    BEGIN 
+
+SELECT Map_To_Convert FROM `maplist` WHERE `ID_Map` = ID_To_Get_Map;
+
+    END$$
+
+DELIMITER ;
+
+
+---------------------------------------
+
+-- The CALL() function will be used by the C# script directly from the game
+
+CALL GetMap(/*the ID of the map (a number) */);
+
+-- The syntax below is a little bit different, because this one is used directly in the game by the c# script
+
+string cmdGet = string.Concat(   "CALL GetMap(", numberOfMapToLoad, ");"   );
+
+---------------------------------------

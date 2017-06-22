@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8fbd1bfcbafe3304ea49981fafbe944d
+timeCreated: 1498137782
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Background: {fileID: 4471301363182734, guid: 25b7789136114bb44a0514074410317a,
+      type: 2}
+  - Wall: {instanceID: 0}
+  - Enemy: {instanceID: 0}
+  - Character: {instanceID: 0}
+  - BigDiamond: {instanceID: 0}
+  - LittleDiamond: {instanceID: 0}
+  - Rock: {instanceID: 0}
+  - Exit: {instanceID: 0}
+  - Dirt: {instanceID: 0}
+  - PrefabToSpawn: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
