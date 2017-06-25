@@ -60,7 +60,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 6
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.18, y: 0.18}
+  m_Size: {x: 0.15, y: 0.15}
   m_EdgeRadius: 0
 --- !u!95 &95070112243563512
 Animator:
@@ -130,7 +130,7 @@ MonoBehaviour:
   MirrorX: 1
   MirrorY: 1
   isColliding: 0
-  PrefabLittleDiamond: {fileID: 4490139647702884, guid: 70e3736d7a1287d40b4284d05b69db3b,
+  PrefabLittleDiamond: {fileID: 4400431211108560, guid: a444f2ec9e8325e47aacb3d5d55c4c99,
     type: 2}
   Character: {fileID: 1277339985767004, guid: 06ef8552b79144d4b92b8ec0ca869f44, type: 2}
   DistanceToCharacter: 0

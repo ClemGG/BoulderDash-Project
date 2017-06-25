@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114816760675860096}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14, y: 0.16}
+  m_Size: {x: 0.07, y: 0.08}
   m_EdgeRadius: 0
 --- !u!81 &81388161260927550
 AudioListener:
@@ -255,14 +255,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridmove: {fileID: 114543245791660506}
   anim: {fileID: 95700276647362572}
-  RemainingLives: 5
-  TotalLives: 5
-  Score: 0
+  RemainingLives: 0
+  TotalLives: 3
+  Score: 16800
   ScoreToWin: 1000
-  ScoreTemp: 0
+  ScoreTemp: 16800
   PointsToGetExtraLife: 2000
   HighScore: 0
-  Timer: 10
+  Timer: 180
 --- !u!124 &124535957790296466
 Behaviour:
   m_ObjectHideFlags: 1

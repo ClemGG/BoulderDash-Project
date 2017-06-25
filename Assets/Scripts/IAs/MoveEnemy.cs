@@ -37,7 +37,7 @@ public class MoveEnemy : MonoBehaviour {
 		InitPos.z = transform.position.z;
 		MirrorX = 1;
 		MirrorY = 0;
-	
+		Character = GameObject.FindGameObjectWithTag ("Character");
 	}
 
 
@@ -69,8 +69,8 @@ public class MoveEnemy : MonoBehaviour {
 		DistanceToCharacter = Vector3.Distance(Character.transform.position, transform.position);
 		if (DistanceToCharacter <= 2 * gridSize) {
 			endPosition = new Vector3 (
-				Character.transform.position.x + MirrorX * gridSize,
-				Character.transform.position.y + MirrorY * gridSize, 
+				Character.transform.position.x + MirrorX * gridSize + gridSize,
+				Character.transform.position.y + MirrorY * gridSize + gridSize, 
 				Character.transform.position.z
 			);
 		} 
@@ -108,7 +108,7 @@ public class MoveEnemy : MonoBehaviour {
 
 		string name = col.transform.name;
 
-		if (name == "BigDiamond" || name == "LittleDiamond") {
+		if (name == "BigDiamond" || name == "LittleDiamond" || name == "BigDiamond(Clone)" || name == "LittleDiamond(Clone)") {
 			Instantiate (PrefabLittleDiamond, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}
@@ -124,7 +124,7 @@ public class MoveEnemy : MonoBehaviour {
 	{
 
 		string name = col.transform.name;
-		if (name == "Rock") {
+		if (name == "Rock" || name == "Rock(Clone)") {
 			Instantiate (PrefabLittleDiamond, transform.position, transform.rotation);
 			Destroy (gameObject);
 		}

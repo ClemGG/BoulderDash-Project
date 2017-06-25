@@ -18,7 +18,7 @@ public class MoveObject : MonoBehaviour {
 	[SerializeField] private Vector3 endPosition;
 	[SerializeField] private float t;
 	[SerializeField] private float factor;
-	[SerializeField] private bool isFalling = true;
+	public bool isFalling = true;
 	public Vector2 InitPos;
 	[SerializeField] private Animator anim;
 	[SerializeField] private string nameOfThisGameObject;
@@ -43,12 +43,14 @@ public class MoveObject : MonoBehaviour {
 			} 
 
 			if (input != Vector2.zero && isFalling) {
-				if (nameOfThisGameObject == "Rock")
+				if (nameOfThisGameObject == "Rock" || nameOfThisGameObject == "Rock(Clone)") {
 					anim.Play ("fall");
+				}
 				StartCoroutine (move (transform));
 			} else {
-				if (nameOfThisGameObject == "Rock")
+				if (nameOfThisGameObject == "Rock" || nameOfThisGameObject == "Rock(Clone)") {
 					anim.Play ("idle");
+				}
 			}
 		}
 	}
@@ -87,22 +89,35 @@ public class MoveObject : MonoBehaviour {
 	}
 
 
-	void OnTriggerEnter2D(Collider2D col){
-		//string name = col.transform.name;
+//	void OnTriggerEnter2D(Collider2D col){
+//		//string name = col.transform.name;
+//		//Debug.Log ("The object's collider triggered with : " + name);
+//
+//			isFalling = false;
+//
+//	
+//	}
+//
+//	void OnTriggerExit2D(Collider2D col){
+//		if (nameOfThisGameObject == "Rock" || nameOfThisGameObject == "Rock(Clone)") {
+//			isFalling = true;
+//		}
+//	}
+
+	void OnCollisionEnter2D(Collision2D col){
+		string name = col.transform.name;
 		//Debug.Log ("The object's collider triggered with : " + name);
+		if (nameOfThisGameObject == "BigDiamond" || nameOfThisGameObject == "BigDiamond(Clone)" || nameOfThisGameObject == "LittleDiamond" || nameOfThisGameObject == "LittleDiamond(Clone)") {
+			//if (name != "Character")
+				isFalling = false;
+		}
 
-		if (nameOfThisGameObject == "Rock")
-			anim.Play ("idle");
-		
-			isFalling = false;
 
-
-	
 	}
 
-	void OnTriggerExit2D(Collider2D col){
-
+	void OnCollisionExit2D(Collision2D col){
+		if (nameOfThisGameObject == "BigDiamond" || nameOfThisGameObject == "BigDiamond(Clone)" || nameOfThisGameObject == "LittleDiamond" || nameOfThisGameObject == "LittleDiamond(Clone)") {
 			isFalling = true;
-	
+		}
 	}
 }

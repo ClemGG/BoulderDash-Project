@@ -14,7 +14,7 @@ public class Stats : MonoBehaviour {
 	[SerializeField] private int TotalLives = 3;
 	public int Score = 0;
 	public int ScoreToWin = 1000;
-	[SerializeField] private int ScoreTemp = 0;
+	public int ScoreTemp = 0;
 	[SerializeField] private int PointsToGetExtraLife = 2000;
 	public int HighScore;
 
@@ -25,6 +25,8 @@ public class Stats : MonoBehaviour {
 	void Awake()
 	{
 		Time.timeScale = 1;
+		Score = 0;
+		ScoreTemp = 0;
 	}
 
 
@@ -35,9 +37,17 @@ public class Stats : MonoBehaviour {
 		TimerOnAwake = Timer;
 		HighScore = (PlayerPrefs.GetInt("HighScore"));
 
+
+
 		if (RemainingLives == 0) {
-			PlayerPrefs.SetInt ("RemainingLives", TotalLives);
-			RemainingLives = TotalLives;
+			int countLives = (PlayerPrefs.GetInt("RemainingLives"));
+			//print ("countLives : "+countLives+", TotaLives : "+TotalLives);
+			if (countLives > TotalLives) {
+				RemainingLives = countLives;
+			} else {
+				PlayerPrefs.SetInt ("RemainingLives", TotalLives);
+				RemainingLives = TotalLives;
+			}
 		}
 	}
 
@@ -80,14 +90,17 @@ public class Stats : MonoBehaviour {
 
 	void UpdateScore()
 	{
-		if (ScoreTemp < Score && ScoreTemp < PointsToGetExtraLife) {
-			ScoreTemp = Score;
-		}
 
 		if (ScoreTemp >= PointsToGetExtraLife) 
 		{
 			RemainingLives += 1;
 			ScoreTemp -= PointsToGetExtraLife;
+		}
+
+		if (RemainingLives > TotalLives) 
+		{
+			TotalLives = RemainingLives;
+			PlayerPrefs.SetInt ("RemainingLives", TotalLives);
 		}
 
 		if (Score > HighScore)
@@ -110,7 +123,7 @@ public class Stats : MonoBehaviour {
 	void OnGUI(){
 		GUI.Box(new Rect(10, 25, 130, 20), "Lives : " + RemainingLives);
 		GUI.Box(new Rect(10, 50, 130, 20), "Score : " + Score);
-		GUI.Box(new Rect(150, 50, 130, 20), "Score : " + HighScore);
+		GUI.Box(new Rect(150, 50, 130, 20), "HighScore : " + HighScore);
 		GUI.Box(new Rect(10, 75, 130, 20), "Timer : " + Timer);
 
 		if (Timer == 0 && RemainingLives > 0)
@@ -134,7 +147,7 @@ public class Stats : MonoBehaviour {
 
 		if (RemainingLives > 0) {
 			
-		
+
 			PlayerPrefs.SetInt ("RemainingLives", RemainingLives);
 			transform.position = new Vector2 (gridmove.InitPos.x, gridmove.InitPos.y);
 			anim.Play ("idle");
@@ -167,9 +180,14 @@ public class Stats : MonoBehaviour {
 	void OnLevelWasLoaded()
 	{
 		if (RemainingLives == 0) {
-			PlayerPrefs.SetInt ("RemainingLives", TotalLives);
-			RemainingLives = TotalLives;
+			int countLives = (PlayerPrefs.GetInt("RemainingLives"));
+			//print ("countLives : "+countLives+", TotaLives : "+TotalLives);
+			if (countLives > TotalLives) {
+				RemainingLives = countLives;
+			} else {
+				PlayerPrefs.SetInt ("RemainingLives", TotalLives);
+				RemainingLives = TotalLives;
+			}
 		}
-
 	}
 }

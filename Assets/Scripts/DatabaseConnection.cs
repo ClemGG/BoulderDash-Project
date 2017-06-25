@@ -82,7 +82,7 @@ public class DatabaseConnection : MonoBehaviour {
 
 			for(int x = 0; x <System.IO.File.ReadAllBytes (FilePath).Length; x++){
 				char c = (char) System.IO.File.ReadAllBytes (FilePath) [x];
-				if (!System.Char.IsNumber (c) && c != '\n') {
+				if (!System.Char.IsNumber (c) && System.Char.GetUnicodeCategory (c) != System.Globalization.UnicodeCategory.Control) {
 					//print(c);
 					map = string.Concat (map, c);
 				}
@@ -144,7 +144,7 @@ public class DatabaseConnection : MonoBehaviour {
 				}
 			}
 
-		print (MapToLoad);
+		//print (MapToLoad);
 		MapReader.Close ();
 		cn.Close ();
 

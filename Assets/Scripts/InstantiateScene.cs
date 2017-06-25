@@ -32,14 +32,11 @@ public class InstantiateScene : MonoBehaviour {
 			for (int x = 0; x < TableWidth; x++) {
 
 
-				
 				c = map [MapWidth + x];
+				//print (c);
+				MapSize [y, x] = c;
+				//print ("Line "+(y+1)+" , Column  "+(x+1)+" : "+MapSize[y,x]);
 
-				if(c != '\n' && c != '\0'){
-					//print (c);
-					MapSize [y, x] = c;
-				}
-				print ("Line "+(y+1)+" , Column  "+(x+1)+" : "+MapSize[y,x]);
 			}
 
 			MapWidth += TableWidth;
@@ -48,26 +45,24 @@ public class InstantiateScene : MonoBehaviour {
 
 
 
-//		for (int y = 0; y <= TableHeight - 1; y++) {
-//			for (int x = 0; x <= TableWidth - 1; x++) {
-//
-//	
-//					c = MapSize [x, y];
-//					//print (c);
-//					Transform prefab = objectcorrespondence.ReturnReceivedChar (c);
-//					//print(prefab.name);
-//					objectcorrespondence.InstantiateObject (prefab, SpawnPosition);
-//					SpawnPosition = new Vector3 (SpawnPosition.x + gridSize, SpawnPosition.y, SpawnPosition.z);
-//
-//			}
-//
-//			SpawnPosition = new Vector3 (0f, SpawnPosition.y + gridSize, SpawnPosition.z);
-//
-//		}
+		for (int y = 0; y < TableHeight; y++) {
+			for (int x = 0; x < TableWidth; x++) {
+
+	
+				c = MapSize [TableHeight-1-y, x];
+					//print (c);
+					Transform prefab = objectcorrespondence.ReturnReceivedChar (c);
+					//print(prefab.name);
+					objectcorrespondence.InstantiateObject (prefab, SpawnPosition);
+					SpawnPosition = new Vector3 (SpawnPosition.x + gridSize, SpawnPosition.y, SpawnPosition.z);
+
+			}
+
+			SpawnPosition = new Vector3 (ZeroPosition.x, SpawnPosition.y + gridSize, SpawnPosition.z);
+
+		}
 
 	}
 
-
-
-
+	
 }

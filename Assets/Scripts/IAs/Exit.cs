@@ -7,7 +7,12 @@ public class Exit : MonoBehaviour {
 	[SerializeField] private Stats stats;
 
 	
-	// Update is called once per frame
+	void Start()
+	{
+		stats = GameObject.FindGameObjectWithTag ("Character").GetComponent<Stats>();
+	}
+
+
 	void Update () {
 
 		if (stats.Score >= stats.ScoreToWin) {

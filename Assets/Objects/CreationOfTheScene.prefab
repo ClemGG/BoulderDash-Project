@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1419425011779506}
+  m_IsPrefabParent: 1
+--- !u!1 &1419425011779506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4852730217571314}
+  - component: {fileID: 114038239824555264}
+  - component: {fileID: 114881397930588408}
+  - component: {fileID: 114811657798300096}
+  m_Layer: 0
+  m_Name: CreationOfTheScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4852730217571314
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419425011779506}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114038239824555264
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419425011779506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e6d97b823c56846a31755bbc13fbf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  host: localhost
+  username: BoulderDashAccount
+  database: boulderdashbdd
+  password: bdproject
+  instantiatescene: {fileID: 114881397930588408}
+  TableWidth: 0
+  TableHeight: 0
+  MapToLoad: 
+--- !u!114 &114811657798300096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419425011779506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbd1bfcbafe3304ea49981fafbe944d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Background: {fileID: 4471301363182734, guid: 25b7789136114bb44a0514074410317a, type: 2}
+  Wall: {fileID: 4606546361467820, guid: 41c3aeddd7a5bda4f978fc0eb21cd2a0, type: 2}
+  Enemy: {fileID: 4748434261698416, guid: 93aeeb90be416434bbbd6c94043b89aa, type: 2}
+  Character: {fileID: 4748804775748790, guid: 06ef8552b79144d4b92b8ec0ca869f44, type: 2}
+  BigDiamond: {fileID: 4570780013572562, guid: afa13fdf580030646a4ba069621cc4b8, type: 2}
+  LittleDiamond: {fileID: 4851662182416138, guid: a444f2ec9e8325e47aacb3d5d55c4c99,
+    type: 2}
+  Rock: {fileID: 4748071818793070, guid: 7e401b70260129c46b2450c4f15511d3, type: 2}
+  Exit: {fileID: 4090122429514650, guid: 1cfb23f079ac1894bbf127bb0e745e33, type: 2}
+  Dirt: {fileID: 4660553766620606, guid: aa41096d075f6e242bc392a99739d9d0, type: 2}
+--- !u!114 &114881397930588408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1419425011779506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3c9fbf578708442974d8d28976f40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectcorrespondence: {fileID: 114811657798300096}
+  charToInstantiate: 
+  ZeroPosition: {x: 0, y: 0, z: 0}
+  SpawnPosition: {x: 0, y: 0, z: 0}
+  gridSize: 0.16

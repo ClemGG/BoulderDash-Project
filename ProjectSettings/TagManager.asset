@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LevelButtons
+  - Character
   layers:
   - Default
   - TransparentFX
