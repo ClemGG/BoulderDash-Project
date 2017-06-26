@@ -57,7 +57,7 @@ public class MoveObject : MonoBehaviour {
 
 	public IEnumerator move(Transform transform) {
 
-		if (isFalling) {
+		while (isFalling) {
 			
 
 			isMoving = true;
