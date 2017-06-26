@@ -21,6 +21,7 @@ public class MoveObject : MonoBehaviour {
 	public bool isFalling = true;
 	public Vector2 InitPos;
 	[SerializeField] private Animator anim;
+	[SerializeField] private GridMove gridmove;
 	[SerializeField] private string nameOfThisGameObject;
 
 	public void Start()
@@ -28,10 +29,11 @@ public class MoveObject : MonoBehaviour {
 		InitPos.x = transform.position.x;
 		InitPos.y = transform.position.y;
 		nameOfThisGameObject = transform.name;
+		gridmove = GameObject.FindGameObjectWithTag ("Character").GetComponent<GridMove> ();
 	}
 
 	public void Update() {
-		if (!isMoving) {
+		if (!isMoving && gridmove.isMoving) {
 			
 			input = new Vector2 (Input.GetAxis ("Horizontal"), Input.GetAxis ("Vertical"));
 			if (!allowDiagonals) {
