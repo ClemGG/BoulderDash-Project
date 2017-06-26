@@ -14,12 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BD_lvl_2.unity
     guid: 60262bd6732cfa94dac63ab9803c4d44
-  - enabled: 0
-    path: Assets/Scenes/2.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/3.unity
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/1.unity
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/BD_lvl_3.unity
+    guid: 070c017319a6e204d8b363596ce079ad
+  - enabled: 1
+    path: Assets/Scenes/BD_lvl_4.unity
+    guid: 9a3220e5676889c4c9786d3f05836f9b
+  - enabled: 1
+    path: Assets/Scenes/BD_lvl_5.unity
+    guid: e4420634513f9034aa991349410147e1

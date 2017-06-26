@@ -1,0 +1,25 @@
+30
+23
+||||||||||||||||||||||||||||||
+|OOOOOOOOOOOOOOOOOOO         |
+|OOOOOOOOOOOOOOOOOO          |
+|OOOOOOOOOOOOOOOOO           |
+|OOOOOOOOOOOOOOOO            |
+|OOOOOOOOOOOOOOO             |
+|OOOOOOOOOOOOOO              |
+|OOOOOOOOOOOOO               |
+|OOOOOOOOOOOO                |
+|OOOOOOOOOOO                 |
+|OOOOOOOOOO                  |
+|OOOOOOOOO                   |
+|OOOOOOOO                    |
+|OOOOOOO                     |
+|OOOOOO                      |
+|OOOOO                       |
+|OOOO                        |
+|OOO                         |
+|OO                          |
+|O                           |
+| C                  VVVVVVVX|
+|DDDDDDDDDDDDDDDDDDDDDDDDDDDD|
+||||||||||||||||||||||||||||||

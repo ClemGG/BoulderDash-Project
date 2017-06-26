@@ -67,7 +67,7 @@ public class MoveEnemy : MonoBehaviour {
 			t = 0;
 
 		DistanceToCharacter = Vector3.Distance(Character.transform.position, transform.position);
-		if (DistanceToCharacter <= 2 * gridSize) {
+		if (DistanceToCharacter <= gridSize) {
 			endPosition = new Vector3 (
 				Character.transform.position.x + MirrorX * gridSize + gridSize,
 				Character.transform.position.y + MirrorY * gridSize + gridSize, 

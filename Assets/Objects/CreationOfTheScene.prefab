@@ -76,10 +76,10 @@ MonoBehaviour:
   Wall: {fileID: 4606546361467820, guid: 41c3aeddd7a5bda4f978fc0eb21cd2a0, type: 2}
   Enemy: {fileID: 4748434261698416, guid: 93aeeb90be416434bbbd6c94043b89aa, type: 2}
   Character: {fileID: 4748804775748790, guid: 06ef8552b79144d4b92b8ec0ca869f44, type: 2}
-  BigDiamond: {fileID: 4570780013572562, guid: afa13fdf580030646a4ba069621cc4b8, type: 2}
-  LittleDiamond: {fileID: 4851662182416138, guid: a444f2ec9e8325e47aacb3d5d55c4c99,
+  BigDiamond: {fileID: 4845389475785732, guid: afa13fdf580030646a4ba069621cc4b8, type: 2}
+  LittleDiamond: {fileID: 4874091486694130, guid: a444f2ec9e8325e47aacb3d5d55c4c99,
     type: 2}
-  Rock: {fileID: 4748071818793070, guid: 7e401b70260129c46b2450c4f15511d3, type: 2}
+  Rock: {fileID: 4405656887651754, guid: 7e401b70260129c46b2450c4f15511d3, type: 2}
   Exit: {fileID: 4090122429514650, guid: 1cfb23f079ac1894bbf127bb0e745e33, type: 2}
   Dirt: {fileID: 4660553766620606, guid: aa41096d075f6e242bc392a99739d9d0, type: 2}
 --- !u!114 &114881397930588408
